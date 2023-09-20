@@ -3,8 +3,18 @@
 # Startup script for ntfy
 
 # Export environment variables
-export NTFY_AUTH_FILE="/app/data/user.db"
-export NTFY_CACHE_FILE="/app/data/cache.db"
+#export NTFY_AUTH_FILE="/app/data/user.db"
+#export NTFY_CACHE_FILE="/app/data/cache.db"
+echo "using the following configs"
+cat /etc/ntfy/server.yml
+# Run ntfy
+ntfy serve &
+
+# Get its process ID
+ntfy_pid=$!
+
+# Wait for ntfy to start
+sleep 5
 
 # Check if NTFY_PASSWORD is empty
 if [ -z "$NTFY_PASSWORD" ]; then
@@ -19,9 +29,7 @@ fi
 # Check if the user database exists. If not, create an initial user.
 if [ ! -f "${NTFY_AUTH_FILE}" ]; then
   echo "Creating initial user..."
-  ntfy user add --role=admin 
+  ntfy user add --role=admin Admin
 fi
 
-# Run ntfy
-ntfy server --config /app/server.yaml
-
+wait $ntfy_pid

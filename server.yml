@@ -1,0 +1,6 @@
+base-url: "https://ntfy-app.fly.dev"
+cache-file: "/app/data/cache.db"
+cache-duration: "12h"
+auth-file: "/app/data/user.db"
+auth-default-access: "deny-all"
+log-level: "debug"

@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for ntfy-app on 2023-09-20T15:31:37-03:00
+# fly.toml app configuration file generated for ntfy-app on 2023-09-20T20:40:23-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -9,6 +9,10 @@ kill_signal = "SIGINT"
 kill_timeout = "5s"
 
 [build]
+
+[[mounts]]
+  source = "ntfy_volume"
+  destination = "/app/data"
 
 [[services]]
   protocol = "tcp"
