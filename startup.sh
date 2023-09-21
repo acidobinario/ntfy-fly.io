@@ -1,12 +1,9 @@
 #!/bin/sh
 
 # Startup script for ntfy
-
-# Export environment variables
-#export NTFY_AUTH_FILE="/app/data/user.db"
-#export NTFY_CACHE_FILE="/app/data/cache.db"
 echo "using the following configs"
 cat /etc/ntfy/server.yml
+
 # Run ntfy
 ntfy serve &
 
