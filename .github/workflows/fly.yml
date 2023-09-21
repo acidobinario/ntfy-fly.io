@@ -18,4 +18,4 @@ jobs:
             -H "Title: ntfy-fly.io repo" \
             -H "Content-Type: text/plain" \
             -d $'Repo: ${{ github.repository }}\nCommit: ${{ github.sha }}\nRef: ${{ github.ref }}\nStatus: ${{ job.status }}' \
-            ${{ secrets.NTFY_URL }}/github
+            ${{ secrets.NTFY_URL }}
