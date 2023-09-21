@@ -1,4 +1,5 @@
 # ntfy.sh on fly.io
+[![Fly Deploy](https://github.com/acidobinario/ntfy-fly.io/actions/workflows/fly.yml/badge.svg)](https://github.com/acidobinario/ntfy-fly.io/actions/workflows/fly.yml)
 ## Configs
 Change the `server.yml` configs to suit your needs, this is a custom example, for more info go to [fly.io configuration docs](https://docs.ntfy.sh/config/)
 
